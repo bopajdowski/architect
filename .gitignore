@@ -1,0 +1,13 @@
+project/settings_local.py
+project/urls_local.py
+*.pyc
+.idea/*
+db.sqlite3
+apps_static/
+media/
+project/whoosh_index/
+logs/*
+public
+static/sass/.sass-cache
+project/whoosh_index
+project/xapian_index
