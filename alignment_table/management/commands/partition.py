@@ -32,24 +32,21 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         """Handle command."""
 
-        # r_start = 10000000
-        # r_stop = 20000000
-        #
-        # step = 100000
-        # pbar = tqdm(range(r_start, r_stop, step))
-        # for start in pbar:
-        #     generate_data_in_database(start, start + step - 1, 'alignment_table_alignmenttable')
-        #     pbar.set_description("Processing %s" % start)
+        r_start = 0
+        r_stop = 10000000
 
-        r_start = 13000000
-        r_stop = 20000000
+        step = 100000
+        pbar = tqdm(range(r_start, r_stop, step))
+        for start in pbar:
+            generate_data_in_database(start, start + step - 1, 'alignment_table_alignmenttable')
+            pbar.set_description("Processing %s" % start)
+
         step = 10000
         pbar = tqdm(range(r_start, r_stop, step))
         for start in pbar:
             generate_data_in_database(start, start + step - 1, 'alignment_table_alignmentdatetable')
             pbar.set_description("Processing %s" % start)
-        r_start = 10000000
-        r_stop = 20000000
+
         step = 1000
         pbar = tqdm(range(r_start, r_stop, step))
         for start in pbar:
